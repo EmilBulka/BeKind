@@ -1,6 +1,10 @@
+using BeKind.Server;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.RegisterServer(builder.Configuration); //adds connection between projects to register services inside them to keep main app clean
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

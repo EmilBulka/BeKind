@@ -21,6 +21,7 @@
     <ProjectReference Include="..\bekind.client\BeKind.UI.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+    <ProjectReference Include="..\BeKind.Infrastructure\BeKind.Infrastructure.csproj" />
     <ProjectReference Include="..\BeKind.Services\BeKind.Server.csproj" />
   </ItemGroup>
 
