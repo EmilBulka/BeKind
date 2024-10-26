@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace BeKind.Infrastructure.Entities
 {
-    public enum Difficulty
+    public class AssignmentStatus
     {
-        Easy,
-        Medium,
-        Hard,
-        Hero
+        public int Id { get; set; }
+        public string Description { get; set; }
     }
 }
