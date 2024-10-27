@@ -1,6 +1,4 @@
-﻿using BeKind.Infrastructure.Entities.ManyToManyRelationObjects;
-
-namespace BeKind.Infrastructure.Entities
+﻿namespace BeKind.Infrastructure.Entities
 {
     public class TargetGroup
     {
