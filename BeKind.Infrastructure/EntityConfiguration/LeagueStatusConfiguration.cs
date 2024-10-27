@@ -10,7 +10,7 @@ namespace BeKind.Infrastructure.EntityConfiguration
         public void Configure(EntityTypeBuilder<LeagueStatus> builder)
         {
             builder.HasData(
-            Enum.GetValues(typeof(LeagueStatus))
+            Enum.GetValues(typeof(Entities.Enums.LeagueStatus))
                 .Cast<Entities.Enums.LeagueStatus>()
                 .Select(status => new LeagueStatus
                 {

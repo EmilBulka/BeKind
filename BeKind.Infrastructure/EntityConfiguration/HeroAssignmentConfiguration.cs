@@ -16,6 +16,11 @@ namespace BeKind.Infrastructure.EntityConfiguration
            .Property(ha => ha.EndTime);
             builder
             .ToTable("HeroAssignments");
+
+            builder
+           .HasOne(a => a.AssignmentStatus)
+           .WithMany()
+           .HasForeignKey(ha => ha.AssignmentId);
         }
     }
 }

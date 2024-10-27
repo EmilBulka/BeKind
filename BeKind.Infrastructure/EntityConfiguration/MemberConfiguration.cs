@@ -15,6 +15,7 @@ namespace BeKind.Infrastructure.EntityConfiguration
 
 
             builder.HasMany(m => m.Assignments).WithOne(a => a.Member);
+            builder.HasOne(m => m.HeroRank).WithMany().HasForeignKey(hr => hr.HeroRankId);
         }
     }
 }

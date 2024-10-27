@@ -10,7 +10,7 @@ namespace BeKind.Infrastructure.EntityConfiguration
         public void Configure(EntityTypeBuilder<TargetGroup> builder)
         {
             builder.HasData(
-            Enum.GetValues(typeof(TargetGroup))
+            Enum.GetValues(typeof(Entities.Enums.TargetGroup))
                 .Cast<Entities.Enums.TargetGroup>()
                 .Select(targetGroup => new TargetGroup
                 {

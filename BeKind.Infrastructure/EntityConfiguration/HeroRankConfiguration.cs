@@ -10,7 +10,7 @@ namespace BeKind.Infrastructure.EntityConfiguration
         public void Configure(EntityTypeBuilder<HeroRank> builder)
         {
             builder.HasData(
-            Enum.GetValues(typeof(HeroRank))
+            Enum.GetValues(typeof(Entities.Enums.HeroRank))
                 .Cast<Entities.Enums.HeroRank>()
                 .Select(heroRank => new HeroRank
                 {

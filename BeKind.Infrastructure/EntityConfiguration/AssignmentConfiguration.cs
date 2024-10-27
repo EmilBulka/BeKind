@@ -8,15 +8,18 @@ namespace BeKind.Infrastructure.EntityConfiguration
     {
         public void Configure(EntityTypeBuilder<Assignment> builder)
         {
-            builder
-           .HasOne(a => a.DifficultyLevel)
-           .WithMany()
-           .HasForeignKey(g => g.DifficultyLevelId);
+            builder.HasOne(assignemnt => assignemnt.DifficultyLevel)
+                   .WithMany()
+                   .HasForeignKey(assignemnt => assignemnt.DifficultyLevelId);
 
-            builder.HasKey(a => a.Id);
+            builder.HasMany(a => a.TargetGroups)
+                   .WithMany(targetGroup => targetGroup.Assignments)
+                   .UsingEntity(x => x.ToTable("AssignemntTargetGroup"));
 
-            builder
-            .ToTable("Assignments");
+            builder.HasKey(assignemnt => assignemnt.Id);
+
+            builder.ToTable("Assignments");
+
         }
     }
 }

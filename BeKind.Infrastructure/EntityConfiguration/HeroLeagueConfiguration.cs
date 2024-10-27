@@ -9,6 +9,7 @@ namespace BeKind.Infrastructure.EntityConfiguration
         public void Configure(EntityTypeBuilder<HeroLeague> builder)
         {
             builder.HasMany(hl => hl.LeagueResults).WithOne(lr => lr.League).HasForeignKey(lr => lr.LeagueId).IsRequired();
+            builder.HasOne(hl => hl.Status).WithMany().HasForeignKey(hl => hl.StatusId);
         }
     }
 }

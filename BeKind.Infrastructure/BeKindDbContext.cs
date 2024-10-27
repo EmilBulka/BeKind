@@ -1,4 +1,5 @@
 ﻿using BeKind.Infrastructure.Entities;
+using BeKind.Infrastructure.Entities.ManyToManyRelationObjects;
 using BeKind.Infrastructure.EntityConfiguration;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -17,6 +18,7 @@ namespace BeKind.Infrastructure
         public DbSet<Entities.HeroRank> HeroRank { get; set; }
         public DbSet<LeagueStatus> LeagueStatus { get; set; }
         public DbSet<TargetGroup> TargetGroup { get; set; }
+        //public DbSet<AssignmentTargetGroups> AssigmentTargetGroups { get; set; }
 
 
         public BeKindDbContext(DbContextOptions<BeKindDbContext> options) : base(options) {}
@@ -33,6 +35,7 @@ namespace BeKind.Infrastructure
             new HeroRankConfiguration().Configure(builder.Entity<Entities.HeroRank>());
             new LeagueStatusConfiguration().Configure(builder.Entity<LeagueStatus>());
             new TargetGroupConfiguration().Configure(builder.Entity<TargetGroup>());
+            //new AssignmentTargetGroupsConfiguration().Configure(builder.Entity<AssignmentTargetGroups>());
 
             base.OnModelCreating(builder);
         }

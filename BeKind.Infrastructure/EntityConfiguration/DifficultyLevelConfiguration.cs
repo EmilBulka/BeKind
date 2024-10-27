@@ -15,7 +15,7 @@ namespace BeKind.Infrastructure
                 .Cast<Difficulty>()
                 .Select(difficulty => new DifficultyLevel
                 {
-                    Id = (int)difficulty + 1,
+                    Id = (int)difficulty,
                     Description = difficulty.ToString().InsertSpacesBetweenEach()
                 }));
 

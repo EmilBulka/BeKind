@@ -10,9 +10,9 @@ namespace BeKind.Infrastructure.EntityConfiguration
         public void Configure(EntityTypeBuilder<Entities.AssignmentStatus> builder)
         {
             builder.HasData(
-            Enum.GetValues(typeof(Entities.AssignmentStatus))
+            Enum.GetValues(typeof(Entities.Enums.AssignmentStatus))
                 .Cast<Entities.Enums.AssignmentStatus>()
-                .Select(status => new DifficultyLevel
+                .Select(status => new AssignmentStatus
                 {
                     Id = (int)status,
                     Description = status.ToString().InsertSpacesBetweenEach()

@@ -10,6 +10,7 @@ namespace BeKind.Infrastructure.EntityConfiguration
         {
             builder.HasKey(e => e.Id);
             builder.HasOne(lr => lr.League).WithMany(hl => hl.LeagueResults).HasForeignKey(lr => lr.LeagueId).IsRequired();
+            builder.HasOne(lr => lr.MemberInfo).WithOne().HasForeignKey<LeagueResult>(lr => lr.MemberId);
         }
     }
 }
