@@ -26,7 +26,7 @@
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\BeKind.Infrastructure\BeKind.Infrastructure.csproj" />
-    <ProjectReference Include="..\BeKind.Services\BeKind.Server.csproj" />
+    <ProjectReference Include="..\BeKind.Services\BeKind.Services.csproj" />
   </ItemGroup>
 
 </Project>

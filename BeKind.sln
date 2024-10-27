@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeKind.Client", "BeKind.Server\BeKind.Client.csproj", "{B1497238-0C2A-4725-B2FE-2D37BC3E6D59}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeKind.Server", "BeKind.Server\BeKind.Server.csproj", "{B1497238-0C2A-4725-B2FE-2D37BC3E6D59}"
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "BeKind.UI", "bekind.client\BeKind.UI.esproj", "{6F6A8D49-EB08-41DE-9B91-D0D335D57E88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeKind.Server", "BeKind.Services\BeKind.Server.csproj", "{BFE25D43-6BDD-4E9E-BB10-1780E5540DF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeKind.Services", "BeKind.Services\BeKind.Services.csproj", "{BFE25D43-6BDD-4E9E-BB10-1780E5540DF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeKind.Infrastructure", "BeKind.Infrastructure\BeKind.Infrastructure.csproj", "{6BDCDD61-AFEF-4625-BD0A-3A3D1EE6A5C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeKind.Infrastructure", "BeKind.Infrastructure\BeKind.Infrastructure.csproj", "{6BDCDD61-AFEF-4625-BD0A-3A3D1EE6A5C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
