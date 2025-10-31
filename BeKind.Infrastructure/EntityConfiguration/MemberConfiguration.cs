@@ -12,10 +12,6 @@ namespace BeKind.Infrastructure.EntityConfiguration
             builder.HasOne(m => m.User)
                 .WithOne().HasForeignKey<Member>(m => m.UserId)
                 .IsRequired();
-
-
-            builder.HasMany(m => m.Assignments).WithOne(a => a.Member);
-            builder.HasOne(m => m.HeroRank).WithMany().HasForeignKey(hr => hr.HeroRankId);
         }
     }
 }

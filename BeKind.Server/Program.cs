@@ -1,4 +1,6 @@
+using BeKind.Infrastructure;
 using BeKind.Server;
+using Microsoft.OpenApi.Writers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +14,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+var appScope = app.Services.CreateScope();
+var seeder = appScope.ServiceProvider.GetRequiredService<BeKindDataSeeder>();
+await seeder.SeedData();
 
 app.UseDefaultFiles();
 app.UseStaticFiles();

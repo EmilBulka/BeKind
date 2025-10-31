@@ -1,5 +1,4 @@
-﻿using BeKind.Infrastructure.Entities;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,7 +12,14 @@ namespace BeKind.Infrastructure
             services.AddDbContext<BeKindDbContext>(options => options.UseSqlServer(
             configuration.GetConnectionString("BulczoConnectionStringDev_BeKindDb")));
 
-            //services.AddScoped<BeKindDataSeeder>();
+            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                    .AddRoles<IdentityRole>()
+                    .AddEntityFrameworkStores<BeKindDbContext>();
+
+            services.AddScoped<UserManager<IdentityUser>>();
+            services.AddScoped<RoleManager<IdentityRole>>();
+
+            services.AddScoped<BeKindDataSeeder>();
         }
     }
 }
