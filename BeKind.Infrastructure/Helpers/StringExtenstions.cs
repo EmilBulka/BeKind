@@ -4,9 +4,9 @@ namespace BeKind.Infrastructure.Helpers
 {
     public static class StringExtenstions
     {
-        public static string InsertSpacesBetweenEach(this String value)
-        {
-            return Regex.Replace(value, "(?<!^)([A-Z])", " $1").Trim();
-        }
+        //public static string InsertSpacesBetweenEach(this String value)
+        //{
+        //    return Regex.Replace(value, "(?<!^)([A-Z])", " $1").Trim();
+        //}
     }
 }

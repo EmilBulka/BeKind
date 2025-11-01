@@ -2,10 +2,11 @@
 
 namespace BeKind.Infrastructure.Entities
 {
-    public class Member
+    public class MemberDSO
     {
         public int Id { get; set; }
         public string UserId { get; set; }
         public IdentityUser User { get; set; }
+        public ICollection<MemberCompanyDSO> MemberCompanies { get; set; }
     }
 }

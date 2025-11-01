@@ -3,13 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeKind.Server", "BeKind.Server\BeKind.Server.csproj", "{B1497238-0C2A-4725-B2FE-2D37BC3E6D59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockNewsTracker.Server", "BeKind.Server\StockNewsTracker.Server.csproj", "{B1497238-0C2A-4725-B2FE-2D37BC3E6D59}"
 EndProject
-Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "BeKind.UI", "bekind.client\BeKind.UI.esproj", "{6F6A8D49-EB08-41DE-9B91-D0D335D57E88}"
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "StockNewsTracker.UI", "bekind.client\StockNewsTracker.UI.esproj", "{6F6A8D49-EB08-41DE-9B91-D0D335D57E88}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeKind.Services", "BeKind.Services\BeKind.Services.csproj", "{BFE25D43-6BDD-4E9E-BB10-1780E5540DF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockNewsTracker.Services", "BeKind.Services\StockNewsTracker.Services.csproj", "{BFE25D43-6BDD-4E9E-BB10-1780E5540DF3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B53DD605-45A2-4C83-8573-38EB02D68725} = {B53DD605-45A2-4C83-8573-38EB02D68725}
+	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeKind.Infrastructure", "BeKind.Infrastructure\BeKind.Infrastructure.csproj", "{6BDCDD61-AFEF-4625-BD0A-3A3D1EE6A5C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockNewsTracker.Infrastructure", "BeKind.Infrastructure\StockNewsTracker.Infrastructure.csproj", "{6BDCDD61-AFEF-4625-BD0A-3A3D1EE6A5C8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{B53DD605-45A2-4C83-8573-38EB02D68725}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +40,10 @@ Global
 		{6BDCDD61-AFEF-4625-BD0A-3A3D1EE6A5C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BDCDD61-AFEF-4625-BD0A-3A3D1EE6A5C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BDCDD61-AFEF-4625-BD0A-3A3D1EE6A5C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B53DD605-45A2-4C83-8573-38EB02D68725}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B53DD605-45A2-4C83-8573-38EB02D68725}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B53DD605-45A2-4C83-8573-38EB02D68725}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B53DD605-45A2-4C83-8573-38EB02D68725}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

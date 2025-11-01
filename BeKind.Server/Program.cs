@@ -16,7 +16,7 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 var appScope = app.Services.CreateScope();
-var seeder = appScope.ServiceProvider.GetRequiredService<BeKindDataSeeder>();
+var seeder = appScope.ServiceProvider.GetRequiredService<StockNewsMasterDataSeeder>();
 await seeder.SeedData();
 
 app.UseDefaultFiles();

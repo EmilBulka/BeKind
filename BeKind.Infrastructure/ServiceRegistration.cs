@@ -2,6 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using StockNewsTracker.Infrastructure.Repositories;
+using StockNewsTracker.Infrastructure.Repositories.Interface;
 
 namespace BeKind.Infrastructure
 {
@@ -9,17 +11,19 @@ namespace BeKind.Infrastructure
     {
         public static void RegisterInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<BeKindDbContext>(options => options.UseSqlServer(
-            configuration.GetConnectionString("BulczoConnectionStringDev_BeKindDb")));
+            services.AddDbContext<StockNewsMasterDbContext>(options => options.UseSqlServer(
+            configuration.GetConnectionString("BulczoConnectionStringDev_MasterDb")));
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                     .AddRoles<IdentityRole>()
-                    .AddEntityFrameworkStores<BeKindDbContext>();
+                    .AddEntityFrameworkStores<StockNewsMasterDbContext>();
 
             services.AddScoped<UserManager<IdentityUser>>();
             services.AddScoped<RoleManager<IdentityRole>>();
 
-            services.AddScoped<BeKindDataSeeder>();
+            services.AddScoped<StockNewsMasterDataSeeder>();
+
+            services.AddScoped<ICompanyRepository, CompanyRepository>();
         }
     }
 }

@@ -4,11 +4,12 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace StockNewsTracker.Infrastructure.EntityConfiguration
 {
-    public class MemberConfiguration : IEntityTypeConfiguration<MemberDSO>
+    public class CompanyConfiguration : IEntityTypeConfiguration<CompanyDSO>
     {
-        public void Configure(EntityTypeBuilder<MemberDSO> builder)
+        public void Configure(EntityTypeBuilder<CompanyDSO> builder)
         {
             builder.HasKey(e => e.Id);
+
         }
     }
 }

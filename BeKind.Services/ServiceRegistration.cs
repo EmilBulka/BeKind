@@ -1,6 +1,8 @@
 ﻿using BeKind.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using StockNewsTracker.Services.Intrerface;
+using StockNewsTracker.Services.Services;
 
 namespace BeKind.Server
 {
@@ -9,6 +11,8 @@ namespace BeKind.Server
         public static void RegisterServer(this IServiceCollection services, IConfiguration configuration)
         {
             services.RegisterInfrastructure(configuration);
+
+            services.AddScoped<ICompanyService, CompanyService>();
         }
     }
 }

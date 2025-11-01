@@ -3,13 +3,13 @@ using Microsoft.AspNetCore.Identity;
 
 namespace BeKind.Infrastructure
 {
-    public class BeKindDataSeeder
+    public class StockNewsMasterDataSeeder
     {
-        private readonly BeKindDbContext _dbContext;
+        private readonly StockNewsMasterDbContext _dbContext;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly UserManager<IdentityUser> _userManager;
 
-        public BeKindDataSeeder(BeKindDbContext dbContext, RoleManager<IdentityRole> roleManager, UserManager<IdentityUser> userManager)
+        public StockNewsMasterDataSeeder(StockNewsMasterDbContext dbContext, RoleManager<IdentityRole> roleManager, UserManager<IdentityUser> userManager)
         {
             _dbContext = dbContext;
             _roleManager = roleManager;

@@ -27,11 +27,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\bekind.client\BeKind.UI.esproj">
+    <ProjectReference Include="..\bekind.client\StockNewsTracker.UI.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\BeKind.Infrastructure\BeKind.Infrastructure.csproj" />
-    <ProjectReference Include="..\BeKind.Services\BeKind.Services.csproj" />
+    <ProjectReference Include="..\BeKind.Infrastructure\StockNewsTracker.Infrastructure.csproj" />
+    <ProjectReference Include="..\BeKind.Services\StockNewsTracker.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Model\" />
   </ItemGroup>
 
 </Project>
