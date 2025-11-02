@@ -1,22 +1,27 @@
 ﻿using StockNewsTracker.Services.Intrerface;
 using Domain.Entities;
 using StockNewsTracker.Infrastructure.Repositories;
+using StockNewsTracker.Infrastructure.Repositories.Interface;
+using AutoMapper;
 
 namespace StockNewsTracker.Services.Services
 {
     public class CompanyService : ICompanyService
     {
-        private readonly CompanyRepository _companyRepository;
+        private readonly ICompanyRepository _companyRepository;
+        private readonly IMapper _mapper;
 
-        public CompanyService(CompanyRepository companyRepository)
+        public CompanyService(ICompanyRepository companyRepository, IMapper mapper)
         {
             _companyRepository = companyRepository;
+            _mapper = mapper;
         }
 
         public async Task<ICollection<Company>> GetUserCompanies(int userId)
         {
             var companiesDSO = await _companyRepository.GetUserCompanies(userId);
-            return new List<Company>();
+            var companies = _mapper.Map<ICollection<Company>>(companiesDSO);
+            return companies;
         }
     }
 }

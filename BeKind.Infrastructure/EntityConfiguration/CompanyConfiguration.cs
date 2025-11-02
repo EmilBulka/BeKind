@@ -9,7 +9,7 @@ namespace StockNewsTracker.Infrastructure.EntityConfiguration
         public void Configure(EntityTypeBuilder<CompanyDSO> builder)
         {
             builder.HasKey(e => e.Id);
-
+            builder.Ignore(e => e.IsNotifyActive);
         }
     }
 }

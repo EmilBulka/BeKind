@@ -1,4 +1,4 @@
-﻿using StockNewsTracker.Server.Dto.Company;
+﻿using StockNewsTracker.Server.Dto;
 
 namespace StockNewsTracker.Server.Response.Company
 {

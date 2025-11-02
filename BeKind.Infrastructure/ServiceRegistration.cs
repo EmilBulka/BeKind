@@ -18,12 +18,12 @@ namespace BeKind.Infrastructure
                     .AddRoles<IdentityRole>()
                     .AddEntityFrameworkStores<StockNewsMasterDbContext>();
 
-            services.AddScoped<UserManager<IdentityUser>>();
-            services.AddScoped<RoleManager<IdentityRole>>();
+            //services.AddScoped<UserManager<IdentityUser>>();
+            //services.AddScoped<RoleManager<IdentityRole>>();
 
             services.AddScoped<StockNewsMasterDataSeeder>();
 
             services.AddScoped<ICompanyRepository, CompanyRepository>();
-        }
+         }
     }
 }

@@ -25,17 +25,17 @@ namespace StockNewsTracker.Infrastructure.Repositories
             if (_dbContext == null)
                 return new List<CompanyDSO>();
 
-            var companies = _dbContext?.MemberCompanies != null
+            var companies = (_dbContext?.MemberCompanies != null)
                 ? await _dbContext.MemberCompanies
                     .Where(mc => mc.MemberId == userId)
                     .Select(uc => new CompanyDSO
                     {
                         Id = uc.Company.Id,
                         Name = uc.Company.Name,
-                        IsActive = uc.Company.IsActive
+                        IsNotifyActive = uc.IsNotifyActive
                     })
                     .ToListAsync()
-                : new List<CompanyDSO>();
+                : new List<CompanyDSO>(); 
 
             return companies;
         }

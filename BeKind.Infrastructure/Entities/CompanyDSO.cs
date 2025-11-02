@@ -5,6 +5,6 @@
         public string Name { get; set; }
         public int Id { get; set; }
         public ICollection<MemberCompanyDSO> MemberCompanies { get; set; }
-        public bool IsActive { get; set; }
+        public bool IsNotifyActive { get; set; }
     }
 }

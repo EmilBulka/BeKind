@@ -7,6 +7,6 @@
         public MemberDSO Member { get; set; }
         public int CompanyId { get; set; }
         public CompanyDSO Company { get; set; }
-        public bool isNotifyActive { get; set; }
+        public bool IsNotifyActive { get; set; }
     }
 }

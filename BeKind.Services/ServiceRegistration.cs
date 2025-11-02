@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using StockNewsTracker.Services.Intrerface;
+using StockNewsTracker.Services.MappingProfiles;
 using StockNewsTracker.Services.Services;
 
 namespace BeKind.Server
@@ -13,6 +14,11 @@ namespace BeKind.Server
             services.RegisterInfrastructure(configuration);
 
             services.AddScoped<ICompanyService, CompanyService>();
+
+            services.AddAutoMapper(cfg =>
+            {
+                cfg.AddProfile<CompanyProfile>();
+            });
         }
     }
 }
