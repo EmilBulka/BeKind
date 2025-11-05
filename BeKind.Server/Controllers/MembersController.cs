@@ -22,7 +22,7 @@ namespace StockNewsTracker.Server.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet("User/{userId:int}/Companies")]
+        [HttpGet("Member/{userId:int}/Companies")]
         public async Task<IActionResult> Get(int userId)
         {
             var userCompanies = await _companyService.GetUserCompanies(userId);

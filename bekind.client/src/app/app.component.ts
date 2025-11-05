@@ -14,5 +14,5 @@ export class AppComponent implements OnInit {
     
   }
 
-  title = 'bekind.client';
+  title = 'Stock News Tracker';
 }

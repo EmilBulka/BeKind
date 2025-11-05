@@ -3,12 +3,21 @@ using BeKind.Server;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Add services to the container
+builder.Services.RegisterServer(builder.Configuration);
 
-builder.Services.RegisterServer(builder.Configuration); //adds connection between projects to register services inside them to keep main app clean
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngularApp",
+        policy =>
+        {
+            policy.WithOrigins("https://127.0.0.1:4200") // Angular dev URL
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+});
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -19,14 +28,21 @@ builder.Services.AddAutoMapper(cfg =>
 
 var app = builder.Build();
 
-var appScope = app.Services.CreateScope();
-var seeder = appScope.ServiceProvider.GetRequiredService<StockNewsMasterDataSeeder>();
-await seeder.SeedData();
+// Seed initial data
+using (var appScope = app.Services.CreateScope())
+{
+    var seeder = appScope.ServiceProvider.GetRequiredService<StockNewsMasterDataSeeder>();
+    await seeder.SeedData();
+}
 
+// Serve Angular static files
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
-// Configure the HTTP request pipeline.
+// Enable CORS
+app.UseCors("AllowAngularApp");
+
+// Middleware pipeline
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -34,11 +50,12 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
 
 app.MapControllers();
 
+// Angular SPA fallback
 app.MapFallbackToFile("/index.html");
 
+// Start the application
 app.Run();
