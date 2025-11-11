@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace StockNewsTracker.Infrastructure.Migrations
 {
     [DbContext(typeof(StockNewsMasterDbContext))]
-    [Migration("20251031195518_init")]
+    [Migration("20251111083029_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -44,21 +44,26 @@ namespace StockNewsTracker.Infrastructure.Migrations
 
             modelBuilder.Entity("BeKind.Infrastructure.Entities.MemberCompanyDSO", b =>
                 {
-                    b.Property<int>("MemberId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("isNotifyActive")
+                    b.Property<bool>("IsNotifyActive")
                         .HasColumnType("bit");
 
-                    b.HasKey("MemberId", "CompanyId");
+                    b.Property<int>("MemberId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("CompanyId");
+
+                    b.HasIndex("MemberId");
 
                     b.ToTable("MemberCompanies", (string)null);
                 });

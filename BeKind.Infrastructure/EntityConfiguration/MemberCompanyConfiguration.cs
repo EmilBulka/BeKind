@@ -11,7 +11,6 @@ namespace StockNewsTracker.Infrastructure.EntityConfiguration
         public void Configure(EntityTypeBuilder<MemberCompanyDSO> builder)
         {
             builder.HasKey(mc => mc.Id);
-            builder.HasKey(mc => new { mc.MemberId, mc.CompanyId });
 
             builder.HasOne(mc => mc.Member)
                    .WithMany(m => m.MemberCompanies)

@@ -1,4 +1,4 @@
-﻿  using System;
+﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
@@ -192,14 +192,15 @@ namespace StockNewsTracker.Infrastructure.Migrations
                 name: "MemberCompanies",
                 columns: table => new
                 {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     MemberId = table.Column<int>(type: "int", nullable: false),
                     CompanyId = table.Column<int>(type: "int", nullable: false),
-                    Id = table.Column<int>(type: "int", nullable: false),
-                    isNotifyActive = table.Column<bool>(type: "bit", nullable: false)
+                    IsNotifyActive = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_MemberCompanies", x => new { x.MemberId, x.CompanyId });
+                    table.PrimaryKey("PK_MemberCompanies", x => x.Id);
                     table.ForeignKey(
                         name: "FK_MemberCompanies_Companies_CompanyId",
                         column: x => x.CompanyId,
@@ -257,6 +258,11 @@ namespace StockNewsTracker.Infrastructure.Migrations
                 name: "IX_MemberCompanies_CompanyId",
                 table: "MemberCompanies",
                 column: "CompanyId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MemberCompanies_MemberId",
+                table: "MemberCompanies",
+                column: "MemberId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Members_UserId",

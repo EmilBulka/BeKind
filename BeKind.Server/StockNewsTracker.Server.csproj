@@ -33,6 +33,7 @@
     </ProjectReference>
     <ProjectReference Include="..\BeKind.Infrastructure\StockNewsTracker.Infrastructure.csproj" />
     <ProjectReference Include="..\BeKind.Services\StockNewsTracker.Services.csproj" />
+    <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>

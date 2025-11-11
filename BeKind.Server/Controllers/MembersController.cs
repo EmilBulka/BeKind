@@ -1,11 +1,10 @@
 ﻿using AutoMapper;
+using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using StockNewsTracker.Server.Dto;
 using StockNewsTracker.Server.Response.Company;
 using StockNewsTracker.Services.Intrerface;
-using StockNewsTracker.Services.Services;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace StockNewsTracker.Server.Controllers
 {
@@ -34,11 +33,25 @@ namespace StockNewsTracker.Server.Controllers
 
             var response = new GetUserCompaniesResponse()
             {
-                UserName = "Bulczo", //temp
+                UserName = "Bulczo", 
                 Companies = userCompaniesDTO
             };
             
             return Ok(response);
+        }
+
+        [HttpPost("Member/{userId:int}/Companies/{companyName}")]
+        public async Task<IActionResult> Add(string companyName, int userId)
+        {
+            var company = new Company(companyName, true);
+            var addCompanyResult = await _companyService.AddUserCompany(userId, company);
+
+            if (addCompanyResult.IsValid == false)
+            {
+                return BadRequest(addCompanyResult.Errors);
+            }
+
+            return Ok();
         }
 
     }
