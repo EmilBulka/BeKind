@@ -2,7 +2,7 @@
 using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using StockNewsTracker.Server.Dto;
-using StockNewsTracker.Server.Response.Company;
+using StockNewsTracker.Server.Model.Response.Company;
 using StockNewsTracker.Services.Intrerface;
 
 

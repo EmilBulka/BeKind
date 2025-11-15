@@ -1,6 +1,6 @@
 ﻿using StockNewsTracker.Server.Dto;
 
-namespace StockNewsTracker.Server.Response.Company
+namespace StockNewsTracker.Server.Model.Response.Company
 {
     public class GetUserCompaniesResponse
     {

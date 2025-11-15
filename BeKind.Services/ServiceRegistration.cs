@@ -1,7 +1,9 @@
 ﻿using BeKind.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using StockNewsTracker.Services.Factory;
 using StockNewsTracker.Services.Intrerface;
+using StockNewsTracker.Services.Intrerface.Factory;
 using StockNewsTracker.Services.MappingProfiles;
 using StockNewsTracker.Services.Services;
 
@@ -14,6 +16,10 @@ namespace BeKind.Server
             services.RegisterInfrastructure(configuration);
 
             services.AddScoped<ICompanyService, CompanyService>();
+
+            var apiKey = configuration.GetValue<string>("OpenAI:ApiKey");
+
+            services.AddSingleton<IChatServiceFactory>(new ChatServiceFactory(apiKey));
 
             services.AddAutoMapper(cfg =>
             {

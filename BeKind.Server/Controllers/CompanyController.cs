@@ -1,8 +1,5 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using StockNewsTracker.Server.Dto;
-using StockNewsTracker.Server.Response.Company;
 using StockNewsTracker.Services.Intrerface;
 
 namespace StockNewsTracker.Server.Controllers
