@@ -8,10 +8,10 @@ namespace StockNewsTracker.Server.Controllers
     [ApiController]
     public class CompanyController : ControllerBase
     {
-        private readonly ICompanyService _companyService;
+        private readonly IMemberCompanyService _companyService;
         private readonly IMapper _mapper;
 
-        public CompanyController(ICompanyService companyService, IMapper mapper)
+        public CompanyController(IMemberCompanyService companyService, IMapper mapper)
         {
             _companyService = companyService;
             _mapper = mapper;

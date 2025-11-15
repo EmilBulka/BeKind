@@ -24,6 +24,8 @@ namespace BeKind.Infrastructure
             services.AddScoped<StockNewsMasterDataSeeder>();
 
             services.AddScoped<ICompanyRepository, CompanyRepository>();
+            services.AddScoped<IMemberRepository, MemberRepository>();
+            services.AddScoped<IMemberCompanyRepository, MemberCompanyRepository>();
          }
     }
 }

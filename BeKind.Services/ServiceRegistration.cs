@@ -15,7 +15,7 @@ namespace BeKind.Server
         {
             services.RegisterInfrastructure(configuration);
 
-            services.AddScoped<ICompanyService, CompanyService>();
+            services.AddScoped<IMemberCompanyService, MemberCompanyService>();
 
             var apiKey = configuration.GetValue<string>("OpenAI:ApiKey");
 
